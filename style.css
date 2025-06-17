@@ -1,0 +1,73 @@
+/*
+  Este arquivo CSS contém estilos personalizados para o site Sustenta Pitanga.
+  Ele é projetado para complementar as classes de utilidade do Tailwind CSS,
+  garantindo um design responsivo e visualmente agradável.
+*/
+
+/*
+  Define a fonte "Inter" como a fonte padrão para todo o corpo do documento.
+  Se a fonte Inter não estiver disponível, o navegador usará uma fonte sans-serif genérica.
+*/
+body {
+    font-family: 'Inter', sans-serif;
+    /* Adiciona transições suaves para propriedades como background e cor,
+       melhorando a experiência visual ao interagir com elementos. */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*
+  Estilos para links de funcionalidade (os cartões clicáveis).
+  Aplica um efeito de escala sutil ao passar o mouse para indicar interatividade.
+*/
+.group:hover .group-hover\:scale-105 {
+    transform: scale(1.05); /* Escala o elemento em 5% no hover */
+}
+
+/*
+  Estilos para os botões e links em geral.
+  Garante que todos os elementos interativos tenham um feedback visual.
+*/
+a, button {
+    cursor: pointer; /* Muda o cursor para indicar que o elemento é clicável */
+    /* Adiciona transições suaves para propriedades como cor, background e sombra,
+       tornando as interações mais fluidas. */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*
+  Estilo para o foco de elementos interativos (acessibilidade).
+  Cria um anel de foco visível e arredondado quando um elemento é focado
+  (ex: navegação por teclado). Isso é crucial para acessibilidade.
+*/
+a:focus, button:focus {
+    outline: none; /* Remove o contorno de foco padrão do navegador */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Adiciona um anel de foco azul claro */
+    border-radius: 0.5rem; /* Arredonda as bordas do anel de foco */
+}
+
+/*
+  Estilo para o rodapé: Garante que o texto tenha uma cor clara e seja centralizado.
+*/
+footer p {
+    color: white; /* Define a cor do texto no rodapé como branco */
+}
+
+/*
+  Estilos responsivos para o corpo da página.
+  Garante que o layout se adapte bem a diferentes tamanhos de tela.
+  - Para telas pequenas (sm): padding horizontal de 1.5rem (px-6).
+  - Para telas médias (lg): padding horizontal de 2rem (px-8).
+*/
+@media (min-width: 640px) { /* sm breakpoint */
+    body {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    body {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
